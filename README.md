@@ -10,8 +10,9 @@ The script runs a fast local server using FastAPI. When another script (like a c
 * **Number 3**: Switch to Scene 1
 * **Number 4**: Switch to Scene 2
 
-## Scaling Strategy
-Instead of keeping 15 different cameras constantly streaming and destroying your computer's USB bus bandwidth or CPU, this setup uses a demand-driven approach: it disables the camera streams when they aren't actively being watched, allowing a heavy multi-camera grid to run safely on a standard machine.
+## Strategy
+
+AutOBS is designed to connect to numerous different sources, and centralize them. This is helpful for large livestreams, and can be used in combination with Churchswap.
 
 ## Quick Start
 1. Enable the WebSocket server in OBS (Tools -> WebSocket Server Settings) on port `4454`.
