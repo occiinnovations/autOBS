@@ -1,3 +1,5 @@
+<img width="1280" height="720" alt="1758599549_obs_studio" src="https://github.com/user-attachments/assets/b8061da5-3c47-4510-aab1-e6cc9ed00352" />
+
 # autOBS
 
 A lightweight Python tool that turns OBS Studio into a local web API server so you can control your scenes, recording, and camera inputs using numbers.
