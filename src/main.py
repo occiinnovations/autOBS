@@ -2,7 +2,7 @@ import uvicorn
 from obswebsocket import obsws, requests
 from fastapi import FastAPI
 
-obs_client = obsws("127.0.0.1", "port", "EnterOBSKey")
+obs_client = obsws("127.0.0.1", 4454, "jMaqIyZMY6Sy2huQ")
 obs_client.connect()
 
 nodary_main = FastAPI()
@@ -36,4 +36,4 @@ def catch_number(incoming_integer: int):
         print("Not gonna work bud")
 
 
-uvicorn.run(nodary_main, host="127.0.0.1", port="insert_port")
+uvicorn.run(nodary_main, host="127.0.0.1", port=8000)
