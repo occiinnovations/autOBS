@@ -2,7 +2,7 @@ import uvicorn
 from obswebsocket import obsws, requests
 from fastapi import FastAPI
 
-obs_client = obsws("127.0.0.1", 4454, "jMaqIyZMY6Sy2huQ")
+obs_client = obsws("127.0.0.1", 4454, "qfewbHU51sMudQNx")
 obs_client.connect()
 
 nodary_main = FastAPI()
@@ -11,26 +11,36 @@ OBS_CAM_STOP_RECORD = False
 OBS_MONITORONE = False
 OBS_MONITORTWO = False
 
+dict_action = {
+    1: "OBS_CAM_RECORD",
+    2: "OBS_CAM_STOP_RECORD",
+    3: "OBS_MONITORONE",
+    4: "OBS_MONITORTWO"
+}
+
 
 @nodary_main.post("/{incoming_integer}")
 def catch_number(incoming_integer: int):
     global OBS_CAM_RECORD, OBS_CAM_STOP_RECORD, OBS_MONITORONE, OBS_MONITORTWO
 
-    if incoming_integer == 1:
-        OBS_CAM_RECORD = True
-        obs_client.call(requests.StartRecord())
+    if incoming_integer in dict_action:
+        action = dict_action[incoming_integer]
 
-    elif incoming_integer == 2:
-        OBS_CAM_STOP_RECORD = True
-        obs_client.call(requests.StopRecord())
+        if action == "OBS_CAM_RECORD":
+            OBS_CAM_RECORD = True
+            obs_client.call(requests.StartRecord())
+        elif action == "OBS_CAM_STOP_RECORD":
+            OBS_CAM_STOP_RECORD = True
+            obs_client.call(requests.StopRecord())
 
-    elif incoming_integer == 3:
-        OBS_MONITORONE = True
-        obs_client.call(requests.SetCurrentProgramScene(sceneName="Scene"))
+        elif action == "OBS_MONITORONE":
+            OBS_MONITORONE = True
+            obs_client.call(requests.SetCurrentProgramScene(sceneName="Scene"))
 
-    elif incoming_integer == 4:
-        OBS_MONITORTWO = True
-        obs_client.call(requests.SetCurrentProgramScene(sceneName="Scene 2"))
+        elif action == "OBS_MONITORTWO":
+            OBS_MONITORTWO = True
+            obs_client.call(
+                requests.SetCurrentProgramScene(sceneName="Scene 2"))
 
     else:
         print("Not gonna work bud")
