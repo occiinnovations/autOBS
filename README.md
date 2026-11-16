@@ -11,10 +11,10 @@ Nodary/
 ├── src/
 │   ├── obs_module/
 │   │   ├── __init__.py
-│   │   ├── obs_controls.py
-│   │   └── obs_stuff.py
-│   ├── main.py
-│   └── test.py
+│   │   ├── obs_controls.py   # a dictionary of controls from OBS
+│   │   └── obs_stuff.py      # returns a tuple of data from your .env file
+│   ├── main.py # server center
+│   └── test.py # use this for terminal input
 ├── .env
 ├── .gitignore
 ├── LICENSE
@@ -50,11 +50,11 @@ OBS_CONTROL_DICT = {
 2. Run your server file:
 
    ```bash
-   python main.py
+   python src/main.py
    ```
 
 3. Run your interactive test script in a second terminal to trigger commands with raw integers:
 
    ```bash
-   python test.py
+   python src/test.py
    ```
