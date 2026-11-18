@@ -1,10 +1,17 @@
 import uvicorn
 from obswebsocket import obsws, requests
 from fastapi import FastAPI
+from dotenv import load_dotenv
+import os
 
 import obs_module
 
-obs_client = obsws("127.0.0.1", 4454, "qfewbHU51sMudQNx")
+load_dotenv()
+my_host = os.getenv("my_HOST")
+my_port = int(os.getenv("my_API_PORT"))
+obs_data_tuple = obs_module.obs_time()
+
+obs_client = obsws(*obs_data_tuple)
 obs_client.connect()
 
 nodary_main = FastAPI()
@@ -14,13 +21,14 @@ nodary_main = FastAPI()
 def catch_number(incoming_integer: int):
 
     if incoming_integer in obs_module.OBS_CONTROL_DICT.keys():
-        obs_client.call(obs_module.OBS_CONTROL_DICT[incoming_integer])
+        the_action = obs_module.OBS_CONTROL_DICT[incoming_integer]
+
+        if callable(the_action):
+            return the_action(obs_client)
+        obs_client.call(the_action)
 
     else:
-        print("Not gonna work bud")
+        print("Invalid Input")
 
 
-# Place module content here:
-obs_tuple = obs_module.obs_time()
-
-uvicorn.run(nodary_main, host=obs_tuple[0], port=obs_tuple[2])
+uvicorn.run(nodary_main, host=my_host, port=my_port)
