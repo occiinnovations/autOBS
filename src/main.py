@@ -12,7 +12,6 @@ my_port = int(os.getenv("my_API_PORT"))
 obs_data_tuple = obs_module.obs_time()
 
 obs_client = obsws(*obs_data_tuple)
-obs_client.connect()
 
 nodary_main = FastAPI()
 
