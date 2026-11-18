@@ -2,7 +2,10 @@
 
 This document shows every single function in autOBS/Nodary. Use as reference.
 
-## OBS (6-14)
+## OBS (4-14)
+
+4 - connect to OBS
+5 - disconnect from OBS
 
 6 - Start Recording
 7 - Stop Recording
