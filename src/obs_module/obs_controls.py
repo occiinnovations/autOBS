@@ -1,5 +1,6 @@
 import obswebsocket as obs_client
 from obswebsocket import obsws, requests
+from obs_module import obs_stuff
 
 obs_client = obsws("127.0.0.1", 4455, "YOUR_PASSWORD")
 
@@ -10,7 +11,7 @@ OBS_CONTROL_DICT = {
     8: requests.SetCurrentProgramScene(sceneName="Scene"),
     9: requests.SetCurrentProgramScene(sceneName="Scene 2"),
 
-    10: requests.GetSceneList(),
+    10: obs_stuff.OBSscenes,
 
     11: requests.SetCurrentPreviewScene(sceneName="Scene 1"),
     12: requests.SetCurrentPreviewScene(sceneName="Scene 2"),
