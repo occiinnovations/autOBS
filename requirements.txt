@@ -2,3 +2,5 @@ fastapi
 uvicorn
 obs-websocket-py
 python-dotenv
+requests
+mcp
