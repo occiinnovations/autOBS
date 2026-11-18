@@ -19,5 +19,5 @@ def OBSscenes(obs_client):
 
     the_scenes = my_dict_data.get("scenes", [])
     for scene in the_scenes:
-        print(f"{scene["sceneName"]}, {scene["sceneIndex"]}")
+        print(f'{scene["sceneName"]}, {scene["sceneIndex"]}')
     return my_dict_data
