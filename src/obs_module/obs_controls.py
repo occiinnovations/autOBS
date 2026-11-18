@@ -5,6 +5,9 @@ from obs_module import obs_stuff
 obs_client = obsws("127.0.0.1", 4455, "YOUR_PASSWORD")
 
 OBS_CONTROL_DICT = {
+    4: lambda client: client.connect(),
+    5: lambda client: client.disconnect(),
+
     6: requests.StartRecord(),
     7: requests.StopRecord(),
 
