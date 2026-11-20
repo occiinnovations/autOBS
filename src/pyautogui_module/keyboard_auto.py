@@ -2,23 +2,23 @@ import pyautogui as pyg
 
 PY_AUTO_GUI_CONTROL_DICT = {
 
-    25: pyg.press('enter'),
-    26: pyg.press('f1'),
+    25: lambda: pyg.press('enter'),
+    26: lambda: pyg.press('f1'),
 
-    26: pyg.press('ctrl'),
-    27: pyg.press('ctrlleft'),
-    28: pyg.press('ctrlright'),
+    27: lambda: pyg.press('ctrl'),
+    28: lambda: pyg.press('ctrlleft'),
+    29: lambda: pyg.press('ctrlright'),
 
-    29: pyg.press('alt'),
-    35: pyg.press('shift'),
-    30: pyg.press('win'),
+    30: lambda: pyg.press('alt'),
+    31: lambda: pyg.press('shift'),
+    32: lambda: pyg.press('win'),
 
-    31: pyg.press('up'),
-    32: pyg.press('down'),
-    33: pyg.press('right'),
-    34: pyg.press('left'),
+    33: lambda: pyg.press('up'),
+    34: lambda: pyg.press('down'),
+    35: lambda: pyg.press('right'),
+    36: lambda: pyg.press('left'),
 
-    36: pyg.press('ctrl', 'c'),
-    37: pyg.hotkey('ctrl', 'v')
+    37: lambda: pyg.hotkey('ctrl', 'c'),
+    38: lambda: pyg.hotkey('ctrl', 'v'),
 
 }
