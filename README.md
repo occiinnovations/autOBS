@@ -9,22 +9,27 @@ AutOBS is designed to connect to numerous different sources, and centralize them
 ```text
 Nodary/
 │
+├── .github/
 ├── docs/
-│   └── masterkey.md          # integer opcode reference key for AI agents
+│   └── masterkey.md               # integer opcode reference key
 │
 ├── src/
 │   ├── lm_studio_module/
-│   │   └── mvp_connect.py    # MCP server bridging LM Studio / agents to FastAPI
+│   │   └── mvp_connect.py         # MCP 
 │   │
 │   ├── obs_module/
 │   │   ├── __init__.py
-│   │   ├── obs_controls.py   # dictionary of controls from OBS
-│   │   └── obs_stuff.py      # OBS connection & scene helper functions
+│   │   ├── obs_controls.py        # dictionary of controls from OBS
+│   │   └── obs_stuff.py           # OBS helper functions
 │   │
-│   ├── main.py               # central FastAPI control server
-│   └── test.py               # manual CLI script for terminal integer input
+│   ├── pyautogui_module/
+│   │   ├── __init__.py
+│   │   └── keyboard_auto.py       # dictionary of PyAutoGUI keyboard & hotkey controls
+│   │
+│   ├── main.py                    # central FastAPI control server
+│   └── test.py                    # manual  terminal integer input
 │
-├── .env
+├── .env                           # Create your own .env after cloning
 ├── .gitignore
 ├── LICENSE
 ├── README.md
