@@ -1,4 +1,3 @@
-import obswebsocket as obs_client
 from obswebsocket import obsws, requests
 from obs_module import obs_stuff
 

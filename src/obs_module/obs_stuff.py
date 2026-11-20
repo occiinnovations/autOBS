@@ -2,7 +2,6 @@ import obswebsocket as obs_client
 from obswebsocket import obsws, requests
 from dotenv import load_dotenv
 import os
-from obs_module import obs_controls
 
 
 def obs_time():
