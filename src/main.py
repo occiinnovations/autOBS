@@ -3,8 +3,11 @@ from obswebsocket import obsws, requests
 from fastapi import FastAPI
 from dotenv import load_dotenv
 import os
+import pyautogui as pyg
 
 import obs_module
+import pyautogui_module
+
 
 load_dotenv()
 my_host = os.getenv("my_HOST")
@@ -26,8 +29,11 @@ def catch_number(incoming_integer: int):
             return the_action(obs_client)
         obs_client.call(the_action)
 
-    else:
-        print("Invalid Input")
+    elif incoming_integer in pyautogui_module.PY_AUTO_GUI_CONTROL_DICT.keys():
+        the_action = pyautogui_module.PY_AUTO_GUI_CONTROL_DICT[incoming_integer](
+        )
+
+        return the_action
 
 
 uvicorn.run(nodary_main, host=my_host, port=my_port)
