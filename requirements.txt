@@ -4,3 +4,4 @@ obs-websocket-py
 python-dotenv
 requests
 mcp
+pyautogui
