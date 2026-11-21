@@ -21,4 +21,16 @@ OBS_CONTROL_DICT = {
     13: requests.TriggerStudioModeTransition(),
 
     14: requests.ToggleVirtualCam(),
+
+    15: requests.StopVirtualCam(),
+
+    16: requests.StartVirtualCam(),
+
+    17: requests.StartStream(),
+
+    18: requests.StopStream(),
+
+    19: requests.PauseRecord(),
+
+    20: requests.ResumeRecord()
 }
