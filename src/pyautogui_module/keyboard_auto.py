@@ -21,4 +21,14 @@ PY_AUTO_GUI_CONTROL_DICT = {
     37: lambda: pyg.hotkey('ctrl', 'c'),
     38: lambda: pyg.hotkey('ctrl', 'v'),
 
+    39: lambda: pyg.hotkey('ctrl', '0'),
+    40: lambda: pyg.hotkey('ctrl', '1'),
+    41: lambda: pyg.hotkey('ctrl', '2'),
+    42: lambda: pyg.hotkey('ctrl', '3'),
+    43: lambda: pyg.hotkey('ctrl', '4'),
+    44: lambda: pyg.hotkey('ctrl', '5'),
+    45: lambda: pyg.hotkey('ctrl', '6'),
+    46: lambda: pyg.hotkey('ctrl', '7'),
+    47: lambda: pyg.hotkey('ctrl', '8'),
+    48: lambda: pyg.hotkey('ctrl', '9'),
 }
