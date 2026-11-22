@@ -31,4 +31,20 @@ PY_AUTO_GUI_CONTROL_DICT = {
     46: lambda: pyg.hotkey('ctrl', '7'),
     47: lambda: pyg.hotkey('ctrl', '8'),
     48: lambda: pyg.hotkey('ctrl', '9'),
+
+    49: lambda: pyg.press('f2'),
+    50: lambda: pyg.press('f3'),
+    51: lambda: pyg.press('f4'),
+    52: lambda: pyg.press('f5'),
+    53: lambda: pyg.press('f6'),
+    54: lambda: pyg.press('f7'),
+    55: lambda: pyg.press('f8'),
+    56: lambda: pyg.press('f9'),
+    57: lambda: pyg.press('f10'),
+    58: lambda: pyg.press('f11'),
+    59: lambda: pyg.press('f12'),
+
+
+}
+
 }
