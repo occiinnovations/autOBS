@@ -40,24 +40,6 @@ Nodary/
 
 The program runs a server using FastAPI. When another script (terminal input, eventlistener, etc) sends a single number to the server, it verifies if the integer is in a specific module dictionary (for now OBS), and runs the associated function.
 
-### Example
-
-```python
-OBS_CONTROL_DICT = {
-    4: lambda client: client.connect(),
-    5: lambda client: client.disconnect(),
-
-    6: requests.StartRecord(),
-    7: requests.StopRecord(),
-
-    8: requests.SetCurrentProgramScene(sceneName="Scene"),
-    9: requests.SetCurrentProgramScene(sceneName="Scene 2"),
-
-    10: obs_stuff.OBSscenes,  # Custom Function created to easily display all scenes in detail using GetSceneList() underneath
-    ...
-}
-```
-
 ## Quick Start
 
 1. Enable the WebSocket server in OBS (Tools -> WebSocket Server Settings) on port `4454`.
@@ -72,8 +54,6 @@ OBS_CONTROL_DICT = {
    ```bash
    python src/test.py
    ```
-
-### Connect Your MCP Client (LM Studio or Claude Desktop)
 
 Add the following entry to your client's `mcp.json` / `claude_desktop_config.json`:
 
@@ -94,6 +74,25 @@ Once it is added, run this:
    ```bash
    python src/lm_studio_module/mvp_connect.py
    ```
+
+
+### Example
+
+```python
+OBS_CONTROL_DICT = {
+    4: lambda client: client.connect(),
+    5: lambda client: client.disconnect(),
+
+    6: requests.StartRecord(),
+    7: requests.StopRecord(),
+
+    8: requests.SetCurrentProgramScene(sceneName="Scene"),
+    9: requests.SetCurrentProgramScene(sceneName="Scene 2"),
+
+    10: obs_stuff.OBSscenes,  # Custom Function created to easily display all scenes in detail using GetSceneList() underneath
+    ...
+}
+```
 
 ## License
 
