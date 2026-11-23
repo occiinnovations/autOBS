@@ -7,6 +7,7 @@ import pyautogui as pyg
 
 import obs_module
 import pyautogui_module
+import webots_module
 
 
 load_dotenv()
@@ -32,7 +33,10 @@ def catch_number(incoming_integer: int):
     elif incoming_integer in pyautogui_module.PY_AUTO_GUI_CONTROL_DICT.keys():
         the_action = pyautogui_module.PY_AUTO_GUI_CONTROL_DICT[incoming_integer](
         )
+        return the_action
 
+    elif incoming_integer in webots_module.WEBOTS_CONTROL_DICT.keys():
+        the_action = webots_module.WEBOTS_CONTROL_DICT[incoming_integer]()
         return the_action
 
 
