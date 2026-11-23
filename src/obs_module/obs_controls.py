@@ -1,8 +1,6 @@
 from obswebsocket import obsws, requests
 from obs_module import obs_stuff
 
-obs_client = obsws("127.0.0.1", 4455, "YOUR_PASSWORD")
-
 OBS_CONTROL_DICT = {
     4: lambda client: client.connect(),
     5: lambda client: client.disconnect(),
@@ -21,16 +19,12 @@ OBS_CONTROL_DICT = {
     13: requests.TriggerStudioModeTransition(),
 
     14: requests.ToggleVirtualCam(),
-
     15: requests.StopVirtualCam(),
-
     16: requests.StartVirtualCam(),
 
     17: requests.StartStream(),
-
     18: requests.StopStream(),
 
     19: requests.PauseRecord(),
-
     20: requests.ResumeRecord()
 }
