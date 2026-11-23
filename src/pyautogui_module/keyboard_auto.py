@@ -44,7 +44,8 @@ PY_AUTO_GUI_CONTROL_DICT = {
     58: lambda: pyg.press('f11'),
     59: lambda: pyg.press('f12'),
 
-
-}
+    60: lambda: pyg.hotkey('ctrl', 'shift', 't'),
+    61: lambda: pyg.hotkey('ctrl', 'shift', 's'),
+    62: lambda: pyg.hotkey('ctrl', 's')
 
 }
