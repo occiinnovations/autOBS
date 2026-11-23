@@ -1,6 +1,6 @@
 # Master Key
 
-This document shows every single function in autOBS/Nodary. Use as reference.
+This document shows every single function in Nodary. Use as reference.
 
 ## OBS (4-14)
 

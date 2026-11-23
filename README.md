@@ -1,8 +1,10 @@
-# autOBS
+# Nodary
 
-A lightweight Python tool that turns OBS Studio into a local web API server so you can control your scenes, recording, and camera inputs using numbers.
+Nodary is a modular Python tool that uses a local API server to control your applications such as Webots and OBS in one spot using a variety of inputs.
 
-AutOBS is designed to connect to numerous different sources, and centralize them. This is helpful for large livestreams. AutOBS will be getting combined with the project [churchswap](https://github.com/occiinnovations/churchswap) to form 'Nodary'.
+This repo is designed to connect to a large amount of applications and connect them in one place. This is helpful for livestreams, repetitive simulation tests, and desktop automation tasks.
+
+Nodary will soon be having the project [churchswap](https://github.com/occiinnovations/churchswap) integrated to a module, in which YOLO will be able to act as an input source.
 
 ## File Directory
 
@@ -26,8 +28,13 @@ Nodary/
 │   │   ├── __init__.py
 │   │   └── keyboard_auto.py       # dictionary of PyAutoGUI keyboard & hotkey controls
 │   │
+│   ├── webots_module/
+│   │   ├── __init__.py
+│   │   ├── webots_controls.py     # dictionary of Webots function integers
+│   │   └── webots_functions.py    # Webots functions 
+│   │
 │   ├── main.py                    # central FastAPI control server
-│   └── test.py                    # manual  terminal integer input
+│   └─ test.py                     # manual integer input 
 │
 ├── .env                           # Create your own .env after cloning
 ├── .gitignore
@@ -38,7 +45,7 @@ Nodary/
 
 ## How it Works
 
-The program runs a server using FastAPI. When another script (terminal input, eventlistener, etc) sends a single number to the server, it verifies if the integer is in a specific module dictionary (for now OBS), and runs the associated function.
+The program runs a server using FastAPI. When another script (terminal input, eventlistener, etc) sends a single number to the server, it verifies if the integer is in a specific module dictionary and runs the associated function.
 
 ## Quick Start
 
@@ -74,7 +81,6 @@ Once it is added, run this:
    ```bash
    python src/lm_studio_module/mvp_connect.py
    ```
-
 
 ### Example
 
