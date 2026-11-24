@@ -49,14 +49,20 @@ The program runs a server using FastAPI. When another script (terminal input, ev
 
 ## Quick Start
 
-1. Enable the WebSocket server in OBS (Tools -> WebSocket Server Settings) on port `4454`.
-2. Run your server file:
+1. Download dependencies:
+
+   ```bash
+   python -m pip install requirements.txt
+   ```
+   
+2. Enable the WebSocket server in OBS (Tools -> WebSocket Server Settings) on port `4454`.
+3. Run your server file:
 
    ```bash
    python src/main.py
    ```
 
-3. Run the test script in a second terminal to trigger commands with keyboard integers:
+4. Run the test script in a second terminal to trigger commands with keyboard integers:
 
    ```bash
    python src/test.py
