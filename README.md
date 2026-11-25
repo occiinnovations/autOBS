@@ -52,7 +52,7 @@ The program runs a server using FastAPI. When another script (terminal input, ev
 1. Download dependencies:
 
    ```bash
-   python -m pip install requirements.txt
+   python -m pip install -r requirements.txt
    ```
    
 2. Enable the WebSocket server in OBS (Tools -> WebSocket Server Settings) on port `4454`.
